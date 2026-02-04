@@ -179,65 +179,42 @@ export const Main: React.FC = () => {
             "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)",
         }}
       >
-        {/* Particle dots - scattered evenly */}
-        <ParticleDot x={180} y={180} size={4} delay={0} speed={1} />
-        <ParticleDot x={350} y={100} size={3} delay={15} speed={1.2} />
-        <ParticleDot x={950} y={120} size={4} delay={30} speed={0.8} />
-        <ParticleDot x={1100} y={200} size={3} delay={45} speed={1.1} />
-        <ParticleDot x={200} y={520} size={4} delay={20} speed={0.9} />
-        <ParticleDot x={1050} y={500} size={3} delay={10} speed={1.3} />
-        <ParticleDot x={640} y={150} size={3} delay={35} speed={1} />
-        <ParticleDot x={640} y={570} size={3} delay={25} speed={1.2} />
+        {/* Particle dots - scattered across the whole frame */}
+        <ParticleDot x={150} y={100} size={4} delay={0} speed={1} />
+        <ParticleDot x={500} y={80} size={3} delay={15} speed={1.2} />
+        <ParticleDot x={780} y={90} size={4} delay={30} speed={0.8} />
+        <ParticleDot x={1100} y={150} size={3} delay={45} speed={1.1} />
+        <ParticleDot x={200} y={300} size={3} delay={20} speed={0.9} />
+        <ParticleDot x={1080} y={350} size={4} delay={10} speed={1.3} />
+        <ParticleDot x={180} y={550} size={4} delay={35} speed={1} />
+        <ParticleDot x={550} y={600} size={3} delay={25} speed={1.2} />
+        <ParticleDot x={730} y={620} size={3} delay={40} speed={0.9} />
+        <ParticleDot x={1050} y={580} size={4} delay={5} speed={1.1} />
 
-        {/* Floating shapes - positioned symmetrically around center */}
-        {/* Top left */}
-        <FloatingShape
-          size={60}
-          color="#22c55e"
-          initialX={80}
-          initialY={80}
-          delay={0}
-        />
-        {/* Top right */}
-        <FloatingShape
-          size={50}
-          color="#3b82f6"
-          initialX={1150}
-          initialY={100}
-          delay={5}
-        />
-        {/* Bottom left */}
-        <FloatingShape
-          size={55}
-          color="#8b5cf6"
-          initialX={100}
-          initialY={580}
-          delay={10}
-        />
-        {/* Bottom right */}
-        <FloatingShape
-          size={45}
-          color="#f59e0b"
-          initialX={1130}
-          initialY={560}
-          delay={15}
-        />
-        {/* Left middle */}
-        <FloatingShape
-          size={35}
-          color="#ec4899"
-          initialX={60}
-          initialY={330}
-          delay={8}
-        />
-        {/* Right middle */}
-        <FloatingShape
-          size={40}
-          color="#06b6d4"
-          initialX={1180}
-          initialY={340}
-          delay={12}
-        />
+        {/* Floating shapes - distributed across the whole frame */}
+        {/* Row 1 - Top */}
+        <FloatingShape size={45} color="#22c55e" initialX={120} initialY={60} delay={0} />
+        <FloatingShape size={30} color="#3b82f6" initialX={400} initialY={40} delay={3} />
+        <FloatingShape size={35} color="#8b5cf6" initialX={850} initialY={50} delay={6} />
+        <FloatingShape size={40} color="#f59e0b" initialX={1100} initialY={70} delay={9} />
+        
+        {/* Row 2 - Upper middle */}
+        <FloatingShape size={35} color="#ec4899" initialX={80} initialY={220} delay={4} />
+        <FloatingShape size={25} color="#06b6d4" initialX={300} initialY={180} delay={7} />
+        <FloatingShape size={28} color="#22c55e" initialX={980} initialY={190} delay={10} />
+        <FloatingShape size={38} color="#3b82f6" initialX={1150} initialY={240} delay={2} />
+        
+        {/* Row 3 - Lower middle */}
+        <FloatingShape size={32} color="#8b5cf6" initialX={100} initialY={480} delay={5} />
+        <FloatingShape size={26} color="#f59e0b" initialX={280} initialY={520} delay={8} />
+        <FloatingShape size={30} color="#ec4899" initialX={1000} initialY={500} delay={11} />
+        <FloatingShape size={36} color="#06b6d4" initialX={1160} initialY={460} delay={1} />
+        
+        {/* Row 4 - Bottom */}
+        <FloatingShape size={42} color="#22c55e" initialX={150} initialY={620} delay={6} />
+        <FloatingShape size={28} color="#3b82f6" initialX={450} initialY={640} delay={9} />
+        <FloatingShape size={32} color="#8b5cf6" initialX={820} initialY={630} delay={12} />
+        <FloatingShape size={38} color="#f59e0b" initialX={1080} initialY={610} delay={3} />
 
         {/* Orbiting rings */}
         <OrbitRing radius={280} strokeWidth={2} color="#22c55e" delay={0} />
