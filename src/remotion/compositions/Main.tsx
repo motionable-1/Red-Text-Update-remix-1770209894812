@@ -61,7 +61,8 @@ export const Main: React.FC = () => {
             return tl;
           }}
         >
-          welcome to <span className="text-green-500 font-light">Motionabl</span>
+          welcome to{" "}
+          <span className="text-green-500 font-light">Typeframes</span>
         </TextAnimation>
       </AbsoluteFill>
     </>
