@@ -17,14 +17,14 @@ export const Pixelate: React.FC<PixelateProps> = ({
   style,
 }) => {
   // SVG filter for pixelation
-  // Logic: 
+  // Logic:
   // 1. Dilate/Erode is one way, but flood+composite is better for "mosaic".
   // Actually, a simpler approximation for DOM elements is strict upscaling or
   // using an SVG filter with feImage (complex).
-  // The most reliable cross-browser way for *dynamic* content without Canvas 
-  // is often SVG feMorphology (blocky) or a specific matrix, but true pixelation 
+  // The most reliable cross-browser way for *dynamic* content without Canvas
+  // is often SVG feMorphology (blocky) or a specific matrix, but true pixelation
   // is hard with just CSS filters on vector content.
-  // 
+  //
   // However, there is a trick using multiple SVG filters:
   // 1. Scale down using a transform
   // 2. Scale up using 'image-rendering: pixelated'
@@ -53,9 +53,9 @@ export const Pixelate: React.FC<PixelateProps> = ({
   // Let's assume we want a "Blocky" look. `feMorphology` dilate makes things look blocky.
   //
   // Better approach for general usage:
-  // Simply wrap the content in a div that is scaled down and then scaled back up 
+  // Simply wrap the content in a div that is scaled down and then scaled back up
   // with `image-rendering: pixelated`. This is supported in Chrome (Remotion's engine).
-  
+
   const scaleFactor = 1 / Math.max(1, pixelSize);
 
   return (
@@ -68,16 +68,18 @@ export const Pixelate: React.FC<PixelateProps> = ({
         ...style,
       }}
     >
-        <div style={{
-            width: `${100 / scaleFactor}%`,
-            height: `${100 / scaleFactor}%`,
-            transform: `scale(${scaleFactor})`,
-            transformOrigin: "top left",
-             // Force hardware acceleration and pixelated rendering
-            imageRendering: "pixelated", 
-        }}>
-            {children}
-        </div>
+      <div
+        style={{
+          width: `${100 / scaleFactor}%`,
+          height: `${100 / scaleFactor}%`,
+          transform: `scale(${scaleFactor})`,
+          transformOrigin: "top left",
+          // Force hardware acceleration and pixelated rendering
+          imageRendering: "pixelated",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };

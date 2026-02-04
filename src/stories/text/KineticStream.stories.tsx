@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { 
-  FlipTextStream, 
-  ZoomTextStream, 
-  BlurTextStream, 
-  ElasticStream, 
-  BlockStream, 
+import type { Meta, StoryObj } from "@storybook/react";
+import {
+  FlipTextStream,
+  ZoomTextStream,
+  BlurTextStream,
+  ElasticStream,
+  BlockStream,
   ChromaticStream,
   DynamicSizeStream,
   StompStream,
@@ -15,25 +15,34 @@ import {
   NeonStream,
   SlideStream,
   SwipeStream,
-  PushStream
-} from '../../remotion/library/components/text/KineticStream';
-import { RemotionWrapper } from '../helpers/RemotionWrapper';
+  PushStream,
+} from "../../remotion/library/components/text/KineticStream";
+import { RemotionWrapper } from "../helpers/RemotionWrapper";
 
 const meta: Meta = {
-  title: 'Text/KineticStream',
+  title: "Text/KineticStream",
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   decorators: [
     (Story) => (
-      <RemotionWrapper 
-        durationInFrames={180} 
-        fps={30} 
-        width={800} 
+      <RemotionWrapper
+        durationInFrames={180}
+        fps={30}
+        width={800}
         height={450}
         backgroundColor="#111111"
       >
-        <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "white",
+          }}
+        >
           <Story />
         </div>
       </RemotionWrapper>
@@ -60,7 +69,8 @@ type SlideStory = StoryObj<typeof SlideStream>;
 type SwipeStory = StoryObj<typeof SwipeStream>;
 type PushStory = StoryObj<typeof PushStream>;
 
-const text = "Kinetic typography brings words to life through motion and timing";
+const text =
+  "Kinetic typography brings words to life through motion and timing";
 
 export const Flip: FlipStory = {
   render: (args) => <FlipTextStream {...args} />,
@@ -199,7 +209,7 @@ export const SlideAlternate: SlideStory = {
     text: "Left Right Left Right Keep Moving",
     fontSize: 80,
     transitionDuration: 12,
-    direction: 'alternate',
+    direction: "alternate",
   },
 };
 
@@ -208,7 +218,7 @@ export const SlideLeft: SlideStory = {
   args: {
     text: "Always entering from the left side",
     fontSize: 80,
-    direction: 'left',
+    direction: "left",
   },
 };
 
@@ -231,12 +241,21 @@ export const CustomDuration: FlipStory = {
   decorators: [
     (Story) => (
       <RemotionWrapper durationInFrames={200} backgroundColor="#111111">
-         <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "white",
+          }}
+        >
           <Story />
         </div>
       </RemotionWrapper>
-    )
-  ]
+    ),
+  ],
 };
 
 export const WithEndDelay: FlipStory = {

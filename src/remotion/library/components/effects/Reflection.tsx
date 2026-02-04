@@ -20,7 +20,7 @@ export interface ReflectionProps {
 
 /**
  * Creates a realistic floor reflection for the content.
- * 
+ *
  * @example
  * <Reflection opacity={0.3} blur={4} offset={10}>
  *   <ProductCard />
@@ -47,9 +47,7 @@ export const Reflection: React.FC<ReflectionProps> = ({
       }}
     >
       {/* Original Content */}
-      <div style={{ position: "relative", zIndex: 2 }}>
-        {children}
-      </div>
+      <div style={{ position: "relative", zIndex: 2 }}>{children}</div>
 
       {/* Reflection */}
       <div

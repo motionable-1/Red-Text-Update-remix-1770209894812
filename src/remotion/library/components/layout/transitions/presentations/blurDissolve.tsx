@@ -15,7 +15,7 @@ export function blurDissolve(): TransitionPresentation<CustomProps> {
 
       // Blur peaks in the middle
       const blurAmount = Math.sin(progress * Math.PI) * 20;
-      
+
       // Opacity cross-fade
       const opacity = isEntering ? smoothProgress : 1 - smoothProgress;
 

@@ -26,7 +26,7 @@ export interface GlassProps {
 /**
  * Premium frosted glass effect (Glassmorphism).
  * Includes backdrop blur, noise texture, and subtle borders.
- * 
+ *
  * @example
  * <Glass blur={20} opacity={0.1}>
  *   <Content />
@@ -86,10 +86,12 @@ export const Glass: React.FC<GlassProps> = ({
             inset: -1,
             borderRadius: borderRadius + 1,
             padding: 1,
-            background: "linear-gradient(45deg, rgba(255,0,0,0.3), rgba(0,255,0,0.3), rgba(0,0,255,0.3))",
+            background:
+              "linear-gradient(45deg, rgba(255,0,0,0.3), rgba(0,255,0,0.3), rgba(0,0,255,0.3))",
             mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
             maskComposite: "exclude",
-            WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            WebkitMask:
+              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
             WebkitMaskComposite: "xor",
             pointerEvents: "none",
             opacity: 0.5,
@@ -105,12 +107,20 @@ export const Glass: React.FC<GlassProps> = ({
           left: 0,
           right: 0,
           height: "40%",
-          background: "linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%)",
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%)",
           pointerEvents: "none",
         }}
       />
 
-      <div style={{ position: "relative", zIndex: 1, width: "100%", height: "100%" }}>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          width: "100%",
+          height: "100%",
+        }}
+      >
         {children}
       </div>
     </div>

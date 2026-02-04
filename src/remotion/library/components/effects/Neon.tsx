@@ -24,7 +24,7 @@ export interface NeonProps {
 /**
  * Neon glow effect container.
  * Adds a realistic neon glow with optional flickering.
- * 
+ *
  * @example
  * <Neon color="#ff0055" glow={20}>
  *   <Text>OPEN</Text>
@@ -45,9 +45,11 @@ export const Neon: React.FC<NeonProps> = ({
   const frame = useCurrentFrame();
 
   // Flicker effect
-  const flickerOp = flicker > 0
-    ? 1 - (Math.random() * flicker * (Math.sin(frame * flickerSpeed) > 0 ? 1 : 0.5))
-    : 1;
+  const flickerOp =
+    flicker > 0
+      ? 1 -
+        Math.random() * flicker * (Math.sin(frame * flickerSpeed) > 0 ? 1 : 0.5)
+      : 1;
 
   const shadow = `
     0 0 ${glow * 0.2}px ${color},
@@ -56,7 +58,7 @@ export const Neon: React.FC<NeonProps> = ({
     0 0 ${glow * 2}px ${color},
     0 0 ${glow * 4}px ${color}
   `;
-  
+
   const textShadow = `
     0 0 ${glow * 0.1}px ${innerColor},
     0 0 ${glow * 0.3}px ${color},

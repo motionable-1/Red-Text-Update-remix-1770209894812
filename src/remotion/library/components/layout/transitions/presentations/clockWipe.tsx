@@ -16,7 +16,7 @@ export function clockWipe(): TransitionPresentation<CustomProps> {
         // Entering scene: Revealed by clock sweep
         // conic-gradient(black 0deg, black Xdeg, transparent Xdeg)
         const degrees = progress * 360;
-        
+
         return (
           <AbsoluteFill
             style={{

@@ -61,7 +61,7 @@ export const Main: React.FC = () => {
             return tl;
           }}
         >
-          welcome to <span className="text-blue-400 font-light">Motionabl</span>
+          welcome to <span className="text-red-500 font-light">Motionabl</span>
         </TextAnimation>
       </AbsoluteFill>
     </>

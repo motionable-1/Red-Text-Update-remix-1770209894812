@@ -16,11 +16,11 @@ export function maskReveal(): TransitionPresentation<CustomProps> {
         // Entering scene: Starts as a small circle in center, expands to fill screen.
         // 0% -> 0% radius
         // 100% -> 150% radius (to cover corners)
-        
+
         // Easing for more impact
         const t = progress;
         const radius = t * 150;
-        
+
         return (
           <AbsoluteFill
             style={{

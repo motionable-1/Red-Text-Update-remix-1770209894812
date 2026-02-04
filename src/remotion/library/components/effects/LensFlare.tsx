@@ -70,7 +70,13 @@ export const LensFlare: React.FC<LensFlareProps> = ({
       { type: "disc", pos: -0.8, size: 40, alpha: 0.1, color: "orange" },
       { type: "hex", pos: 0.3, size: 80, alpha: 0.1, color: "teal" },
       { type: "disc", pos: 0.5, size: 200, alpha: 0.05, color: "magenta" },
-      { type: "ring", pos: 1.2, size: 300, alpha: 0.05, color: "rgba(255,255,255,0.1)" },
+      {
+        type: "ring",
+        pos: 1.2,
+        size: 300,
+        alpha: 0.05,
+        color: "rgba(255,255,255,0.1)",
+      },
     ];
   }, [color]);
 
@@ -93,9 +99,12 @@ export const LensFlare: React.FC<LensFlareProps> = ({
         // pos 1 = reflected across center
         const fx = centerX - vecX * f.pos;
         const fy = centerY - vecY * f.pos;
-        
+
         // Intensity fades as light moves off screen
-        const visibility = Math.max(0, 1 - dist / (Math.max(width, height) * 0.8));
+        const visibility = Math.max(
+          0,
+          1 - dist / (Math.max(width, height) * 0.8),
+        );
         const currentAlpha = f.alpha * visibility;
 
         return (
@@ -112,48 +121,85 @@ export const LensFlare: React.FC<LensFlareProps> = ({
             }}
           >
             {f.type === "burst" && (
-              <div style={{ 
-                width: "100%", height: "100%", 
-                background: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)" 
-              }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  background:
+                    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)",
+                }}
+              />
             )}
             {f.type === "glow" && (
-               <div style={{ 
-                width: "100%", height: "100%", 
-                background: `radial-gradient(circle, ${f.color} 0%, rgba(0,0,0,0) 70%)` 
-              }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  background: `radial-gradient(circle, ${f.color} 0%, rgba(0,0,0,0) 70%)`,
+                }}
+              />
             )}
             {f.type === "ring" && (
-              <div style={{ 
-                width: "100%", height: "100%", 
-                borderRadius: "50%",
-                border: `2px solid ${f.color}`,
-                boxShadow: `0 0 10px ${f.color}`,
-                opacity: 0.6
-              }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",
+                  border: `2px solid ${f.color}`,
+                  boxShadow: `0 0 10px ${f.color}`,
+                  opacity: 0.6,
+                }}
+              />
             )}
             {f.type === "disc" && (
-              <div style={{ 
-                width: "100%", height: "100%", 
-                borderRadius: "50%",
-                background: f.color,
-                filter: "blur(4px)"
-              }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",
+                  background: f.color,
+                  filter: "blur(4px)",
+                }}
+              />
             )}
             {f.type === "hex" && (
-              <div style={{
-                width: "100%", height: "100%",
-                background: f.color,
-                clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                opacity: 0.8,
-                filter: "blur(2px)"
-              }} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  background: f.color,
+                  clipPath:
+                    "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                  opacity: 0.8,
+                  filter: "blur(2px)",
+                }}
+              />
             )}
             {/* Star streaks for the main burst */}
             {f.type === "burst" && (
               <>
-                 <div style={{ position: "absolute", top: "49%", left: "-50%", width: "200%", height: "2%", background: "rgba(255,255,255,0.8)", filter: "blur(1px)" }} />
-                 <div style={{ position: "absolute", top: "-50%", left: "49%", width: "2%", height: "200%", background: "rgba(255,255,255,0.8)", filter: "blur(1px)" }} />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "49%",
+                    left: "-50%",
+                    width: "200%",
+                    height: "2%",
+                    background: "rgba(255,255,255,0.8)",
+                    filter: "blur(1px)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-50%",
+                    left: "49%",
+                    width: "2%",
+                    height: "200%",
+                    background: "rgba(255,255,255,0.8)",
+                    filter: "blur(1px)",
+                  }}
+                />
               </>
             )}
           </div>
