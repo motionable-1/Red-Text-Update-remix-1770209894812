@@ -57,6 +57,57 @@ const FloatingShape: React.FC<{
   );
 };
 
+// Orbiting ring component
+const OrbitRing: React.FC<{
+  radius: number;
+  strokeWidth: number;
+  color: string;
+  delay: number;
+}> = ({ radius, strokeWidth, color, delay }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const progress = spring({
+    frame: frame - delay,
+    fps,
+    config: { damping: 20, stiffness: 80 },
+  });
+
+  const rotation = interpolate(frame, [0, 360], [0, 360], {
+    extrapolateRight: "extend",
+  });
+
+  const dashOffset = interpolate(frame, [0, 120], [0, -100], {
+    extrapolateRight: "extend",
+  });
+
+  return (
+    <svg
+      width={radius * 2 + strokeWidth}
+      height={radius * 2 + strokeWidth}
+      style={{
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        transform: `translate(-50%, -50%) rotate(${rotation}deg) scale(${progress})`,
+        opacity: progress * 0.3,
+      }}
+    >
+      <circle
+        cx={radius + strokeWidth / 2}
+        cy={radius + strokeWidth / 2}
+        r={radius}
+        fill="none"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeDasharray="20 40"
+        strokeDashoffset={dashOffset}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
 // Particle dot component
 const ParticleDot: React.FC<{
   x: number;
@@ -182,6 +233,11 @@ export const Main: React.FC = () => {
           delay={12}
         />
 
+        {/* Orbiting rings */}
+        <OrbitRing radius={280} strokeWidth={2} color="#22c55e" delay={0} />
+        <OrbitRing radius={320} strokeWidth={1.5} color="#3b82f6" delay={10} />
+        <OrbitRing radius={360} strokeWidth={1} color="#8b5cf6" delay={20} />
+
         {/* Center glow */}
         <div
           style={{
@@ -260,6 +316,19 @@ export const Main: React.FC = () => {
           >
             Create stunning videos with AI
           </div>
+
+          {/* Gradient underline */}
+          <div
+            style={{
+              opacity: taglineOpacity,
+              transform: `scaleX(${interpolate(taglineY, [0, 1], [0, 1])})`,
+              marginTop: 16,
+              width: 200,
+              height: 2,
+              borderRadius: 1,
+              background: "linear-gradient(90deg, transparent, #22c55e, #3b82f6, transparent)",
+            }}
+          />
         </AbsoluteFill>
       </AbsoluteFill>
     </>
