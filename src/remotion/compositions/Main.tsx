@@ -57,6 +57,43 @@ const FloatingShape: React.FC<{
   );
 };
 
+// Particle dot component
+const ParticleDot: React.FC<{
+  x: number;
+  y: number;
+  size: number;
+  delay: number;
+  speed: number;
+}> = ({ x, y, size, delay, speed }) => {
+  const frame = useCurrentFrame();
+
+  const pulse = interpolate(
+    (frame + delay) % (60 / speed),
+    [0, 30 / speed, 60 / speed],
+    [0.3, 1, 0.3],
+    { extrapolateRight: "clamp" },
+  );
+
+  const drift = interpolate(frame, [0, 120], [0, -20], {
+    extrapolateRight: "extend",
+  });
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x,
+        top: y + drift,
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        backgroundColor: "white",
+        opacity: pulse * 0.4,
+      }}
+    />
+  );
+};
+
 export const Main: React.FC = () => {
   const { fontFamily } = loadFont();
   const frame = useCurrentFrame();
@@ -74,6 +111,11 @@ export const Main: React.FC = () => {
     config: { damping: 15, stiffness: 100 },
   });
 
+  // Glow pulse
+  const glowPulse = interpolate(frame % 90, [0, 45, 90], [0.4, 0.8, 0.4], {
+    extrapolateRight: "clamp",
+  });
+
   return (
     <>
       {/* Leave this here to generate a thumbnail */}
@@ -86,6 +128,16 @@ export const Main: React.FC = () => {
             "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)",
         }}
       >
+        {/* Particle dots */}
+        <ParticleDot x={200} y={200} size={4} delay={0} speed={1} />
+        <ParticleDot x={400} y={150} size={3} delay={15} speed={1.2} />
+        <ParticleDot x={900} y={180} size={5} delay={30} speed={0.8} />
+        <ParticleDot x={1000} y={400} size={3} delay={45} speed={1.1} />
+        <ParticleDot x={300} y={450} size={4} delay={20} speed={0.9} />
+        <ParticleDot x={800} y={500} size={3} delay={10} speed={1.3} />
+        <ParticleDot x={500} y={120} size={4} delay={35} speed={1} />
+        <ParticleDot x={1100} y={300} size={3} delay={25} speed={1.2} />
+
         {/* Floating shapes */}
         <FloatingShape
           size={80}
@@ -128,6 +180,23 @@ export const Main: React.FC = () => {
           initialX={150}
           initialY={350}
           delay={12}
+        />
+
+        {/* Center glow */}
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 600,
+            height: 300,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(ellipse, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
+            opacity: glowPulse,
+            filter: "blur(40px)",
+          }}
         />
 
         {/* Main content */}
