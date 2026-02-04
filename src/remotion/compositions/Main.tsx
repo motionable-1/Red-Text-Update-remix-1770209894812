@@ -179,60 +179,60 @@ export const Main: React.FC = () => {
             "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)",
         }}
       >
-        {/* Particle dots - filling entire frame */}
+        {/* Particle dots - filling entire 1920x1080 frame */}
         {/* Top area */}
-        <ParticleDot x={200} y={80} size={4} delay={0} speed={1} />
-        <ParticleDot x={500} y={100} size={3} delay={15} speed={1.2} />
-        <ParticleDot x={800} y={70} size={4} delay={30} speed={0.8} />
-        <ParticleDot x={1100} y={90} size={3} delay={45} speed={1.1} />
+        <ParticleDot x={300} y={120} size={5} delay={0} speed={1} />
+        <ParticleDot x={750} y={150} size={4} delay={15} speed={1.2} />
+        <ParticleDot x={1200} y={100} size={5} delay={30} speed={0.8} />
+        <ParticleDot x={1650} y={130} size={4} delay={45} speed={1.1} />
         {/* Middle left/right */}
-        <ParticleDot x={120} y={300} size={3} delay={20} speed={0.9} />
-        <ParticleDot x={130} y={450} size={4} delay={10} speed={1.3} />
-        <ParticleDot x={1150} y={280} size={4} delay={35} speed={1} />
-        <ParticleDot x={1140} y={480} size={3} delay={25} speed={1.2} />
+        <ParticleDot x={180} y={450} size={4} delay={20} speed={0.9} />
+        <ParticleDot x={200} y={700} size={5} delay={10} speed={1.3} />
+        <ParticleDot x={1720} y={420} size={5} delay={35} speed={1} />
+        <ParticleDot x={1700} y={720} size={4} delay={25} speed={1.2} />
         {/* Bottom area */}
-        <ParticleDot x={180} y={620} size={3} delay={40} speed={0.9} />
-        <ParticleDot x={480} y={650} size={4} delay={5} speed={1.1} />
-        <ParticleDot x={800} y={640} size={3} delay={12} speed={1} />
-        <ParticleDot x={1100} y={630} size={4} delay={22} speed={0.9} />
+        <ParticleDot x={270} y={950} size={4} delay={40} speed={0.9} />
+        <ParticleDot x={720} y={1000} size={5} delay={5} speed={1.1} />
+        <ParticleDot x={1200} y={980} size={4} delay={12} speed={1} />
+        <ParticleDot x={1650} y={960} size={5} delay={22} speed={0.9} />
 
-        {/* Floating shapes - scattered across ENTIRE 1280x720 frame */}
+        {/* Floating shapes - scattered across ENTIRE 1920x1080 frame */}
         {/* Grid-based distribution for full coverage */}
-        {/* Row 1 (y ~60) */}
-        <FloatingShape size={45} color="#22c55e" initialX={60} initialY={50} delay={0} />
-        <FloatingShape size={32} color="#3b82f6" initialX={280} initialY={70} delay={2} />
-        <FloatingShape size={38} color="#ec4899" initialX={500} initialY={55} delay={4} />
-        <FloatingShape size={35} color="#8b5cf6" initialX={720} initialY={65} delay={6} />
-        <FloatingShape size={40} color="#f59e0b" initialX={950} initialY={50} delay={8} />
-        <FloatingShape size={36} color="#06b6d4" initialX={1180} initialY={60} delay={10} />
+        {/* Row 1 (y ~80) */}
+        <FloatingShape size={55} color="#22c55e" initialX={80} initialY={60} delay={0} />
+        <FloatingShape size={40} color="#3b82f6" initialX={420} initialY={90} delay={2} />
+        <FloatingShape size={48} color="#ec4899" initialX={760} initialY={70} delay={4} />
+        <FloatingShape size={42} color="#8b5cf6" initialX={1100} initialY={85} delay={6} />
+        <FloatingShape size={50} color="#f59e0b" initialX={1440} initialY={65} delay={8} />
+        <FloatingShape size={45} color="#06b6d4" initialX={1780} initialY={75} delay={10} />
         
-        {/* Row 2 (y ~200) */}
-        <FloatingShape size={34} color="#f59e0b" initialX={100} initialY={190} delay={1} />
-        <FloatingShape size={42} color="#06b6d4" initialX={350} initialY={210} delay={3} />
-        <FloatingShape size={30} color="#22c55e" initialX={600} initialY={195} delay={5} />
-        <FloatingShape size={38} color="#ec4899" initialX={850} initialY={205} delay={7} />
-        <FloatingShape size={35} color="#3b82f6" initialX={1120} initialY={190} delay={9} />
+        {/* Row 2 (y ~300) */}
+        <FloatingShape size={44} color="#f59e0b" initialX={120} initialY={280} delay={1} />
+        <FloatingShape size={52} color="#06b6d4" initialX={500} initialY={310} delay={3} />
+        <FloatingShape size={38} color="#22c55e" initialX={900} initialY={290} delay={5} />
+        <FloatingShape size={48} color="#ec4899" initialX={1300} initialY={305} delay={7} />
+        <FloatingShape size={42} color="#3b82f6" initialX={1700} initialY={285} delay={9} />
         
-        {/* Row 3 (y ~350) - middle area */}
-        <FloatingShape size={36} color="#8b5cf6" initialX={80} initialY={340} delay={2} />
-        <FloatingShape size={28} color="#22c55e" initialX={320} initialY={360} delay={4} />
-        <FloatingShape size={32} color="#f59e0b" initialX={950} initialY={355} delay={6} />
-        <FloatingShape size={40} color="#06b6d4" initialX={1160} initialY={345} delay={8} />
+        {/* Row 3 (y ~540) - middle area */}
+        <FloatingShape size={46} color="#8b5cf6" initialX={100} initialY={520} delay={2} />
+        <FloatingShape size={36} color="#22c55e" initialX={480} initialY={550} delay={4} />
+        <FloatingShape size={40} color="#f59e0b" initialX={1420} initialY={535} delay={6} />
+        <FloatingShape size={50} color="#06b6d4" initialX={1760} initialY={525} delay={8} />
         
-        {/* Row 4 (y ~500) */}
-        <FloatingShape size={38} color="#3b82f6" initialX={100} initialY={490} delay={3} />
-        <FloatingShape size={34} color="#ec4899" initialX={380} initialY={510} delay={5} />
-        <FloatingShape size={30} color="#8b5cf6" initialX={620} initialY={495} delay={7} />
-        <FloatingShape size={36} color="#22c55e" initialX={880} initialY={505} delay={9} />
-        <FloatingShape size={42} color="#f59e0b" initialX={1140} initialY={490} delay={11} />
+        {/* Row 4 (y ~760) */}
+        <FloatingShape size={48} color="#3b82f6" initialX={140} initialY={740} delay={3} />
+        <FloatingShape size={42} color="#ec4899" initialX={560} initialY={770} delay={5} />
+        <FloatingShape size={38} color="#8b5cf6" initialX={940} initialY={750} delay={7} />
+        <FloatingShape size={46} color="#22c55e" initialX={1320} initialY={765} delay={9} />
+        <FloatingShape size={52} color="#f59e0b" initialX={1720} initialY={745} delay={11} />
         
-        {/* Row 5 (y ~640) - bottom */}
-        <FloatingShape size={40} color="#06b6d4" initialX={70} initialY={630} delay={0} />
-        <FloatingShape size={35} color="#8b5cf6" initialX={300} initialY={645} delay={2} />
-        <FloatingShape size={38} color="#ec4899" initialX={540} initialY={635} delay={4} />
-        <FloatingShape size={32} color="#3b82f6" initialX={780} initialY={650} delay={6} />
-        <FloatingShape size={44} color="#22c55e" initialX={1020} initialY={640} delay={8} />
-        <FloatingShape size={36} color="#f59e0b" initialX={1190} initialY={630} delay={10} />
+        {/* Row 5 (y ~980) - bottom */}
+        <FloatingShape size={50} color="#06b6d4" initialX={100} initialY={960} delay={0} />
+        <FloatingShape size={44} color="#8b5cf6" initialX={450} initialY={980} delay={2} />
+        <FloatingShape size={48} color="#ec4899" initialX={800} initialY={965} delay={4} />
+        <FloatingShape size={40} color="#3b82f6" initialX={1150} initialY={985} delay={6} />
+        <FloatingShape size={54} color="#22c55e" initialX={1500} initialY={970} delay={8} />
+        <FloatingShape size={46} color="#f59e0b" initialX={1800} initialY={955} delay={10} />
 
         {/* Orbiting rings */}
         <OrbitRing radius={280} strokeWidth={2} color="#22c55e" delay={0} />
