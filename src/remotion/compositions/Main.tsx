@@ -179,57 +179,63 @@ export const Main: React.FC = () => {
             "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)",
         }}
       >
-        {/* Particle dots */}
-        <ParticleDot x={200} y={200} size={4} delay={0} speed={1} />
-        <ParticleDot x={400} y={150} size={3} delay={15} speed={1.2} />
-        <ParticleDot x={900} y={180} size={5} delay={30} speed={0.8} />
-        <ParticleDot x={1000} y={400} size={3} delay={45} speed={1.1} />
-        <ParticleDot x={300} y={450} size={4} delay={20} speed={0.9} />
-        <ParticleDot x={800} y={500} size={3} delay={10} speed={1.3} />
-        <ParticleDot x={500} y={120} size={4} delay={35} speed={1} />
-        <ParticleDot x={1100} y={300} size={3} delay={25} speed={1.2} />
+        {/* Particle dots - scattered evenly */}
+        <ParticleDot x={180} y={180} size={4} delay={0} speed={1} />
+        <ParticleDot x={350} y={100} size={3} delay={15} speed={1.2} />
+        <ParticleDot x={950} y={120} size={4} delay={30} speed={0.8} />
+        <ParticleDot x={1100} y={200} size={3} delay={45} speed={1.1} />
+        <ParticleDot x={200} y={520} size={4} delay={20} speed={0.9} />
+        <ParticleDot x={1050} y={500} size={3} delay={10} speed={1.3} />
+        <ParticleDot x={640} y={150} size={3} delay={35} speed={1} />
+        <ParticleDot x={640} y={570} size={3} delay={25} speed={1.2} />
 
-        {/* Floating shapes */}
+        {/* Floating shapes - positioned symmetrically around center */}
+        {/* Top left */}
         <FloatingShape
-          size={80}
+          size={60}
           color="#22c55e"
-          initialX={100}
-          initialY={150}
+          initialX={80}
+          initialY={80}
           delay={0}
         />
+        {/* Top right */}
         <FloatingShape
           size={50}
           color="#3b82f6"
-          initialX={1100}
+          initialX={1150}
           initialY={100}
           delay={5}
         />
+        {/* Bottom left */}
         <FloatingShape
-          size={60}
+          size={55}
           color="#8b5cf6"
-          initialX={200}
-          initialY={500}
+          initialX={100}
+          initialY={580}
           delay={10}
         />
+        {/* Bottom right */}
         <FloatingShape
-          size={40}
+          size={45}
           color="#f59e0b"
-          initialX={1050}
-          initialY={550}
+          initialX={1130}
+          initialY={560}
           delay={15}
         />
+        {/* Left middle */}
         <FloatingShape
           size={35}
           color="#ec4899"
-          initialX={600}
-          initialY={80}
+          initialX={60}
+          initialY={330}
           delay={8}
         />
+        {/* Right middle */}
         <FloatingShape
-          size={45}
+          size={40}
           color="#06b6d4"
-          initialX={150}
-          initialY={350}
+          initialX={1180}
+          initialY={340}
           delay={12}
         />
 
