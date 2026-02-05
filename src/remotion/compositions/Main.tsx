@@ -204,7 +204,7 @@ export const Main: React.FC = () => {
         <FloatingShape size={48} color="#ec4899" initialX={760} initialY={70} delay={4} />
         <FloatingShape size={42} color="#8b5cf6" initialX={1100} initialY={85} delay={6} />
         <FloatingShape size={50} color="#f59e0b" initialX={1440} initialY={65} delay={8} />
-        <FloatingShape size={45} color="#ef4444" initialX={1780} initialY={75} delay={10} />
+        <FloatingShape size={45} color="#f97316" initialX={1780} initialY={75} delay={10} />
         
         {/* Row 2 (y ~300) */}
         <FloatingShape size={44} color="#f59e0b" initialX={120} initialY={280} delay={1} />
