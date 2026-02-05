@@ -12,8 +12,8 @@ import { loadFont } from "@remotion/google-fonts/Inter";
 // This re-runs on every HMR update of this file
 const hmrKey = Date.now();
 
-// Floating triangle component
-const FloatingTriangle: React.FC<{
+// Floating cat component
+const FloatingCat: React.FC<{
   size: number;
   color: string;
   initialX: number;
@@ -33,12 +33,8 @@ const FloatingTriangle: React.FC<{
     extrapolateRight: "extend",
   });
 
-  const rotation = interpolate(frame, [0, 240], [0, 360], {
-    extrapolateRight: "extend",
-  });
-
   const scale = interpolate(progress, [0, 1], [0, 1]);
-  const opacity = interpolate(progress, [0, 1], [0, 0.6]);
+  const opacity = interpolate(progress, [0, 1], [0, 0.8]);
 
   return (
     <div
@@ -46,15 +42,13 @@ const FloatingTriangle: React.FC<{
         position: "absolute",
         left: initialX,
         top: initialY + floatY,
-        width: 0,
-        height: 0,
-        borderLeft: `${size / 2}px solid transparent`,
-        borderRight: `${size / 2}px solid transparent`,
-        borderBottom: `${size}px solid ${color}`,
-        transform: `scale(${scale}) rotate(${rotation}deg)`,
+        fontSize: size,
+        transform: `scale(${scale})`,
         opacity,
       }}
-    />
+    >
+      🐱
+    </div>
   );
 };
 
@@ -250,7 +244,7 @@ export const Main: React.FC = () => {
         <FloatingShape size={48} color="#ec4899" initialX={760} initialY={70} delay={4} />
         <FloatingShape size={42} color="#8b5cf6" initialX={1100} initialY={85} delay={6} />
         <FloatingShape size={50} color="#f59e0b" initialX={1440} initialY={65} delay={8} />
-        <FloatingTriangle size={45} color="#f97316" initialX={1780} initialY={75} delay={10} />
+        <FloatingCat size={45} color="#f97316" initialX={1780} initialY={75} delay={10} />
         
         {/* Row 2 (y ~300) */}
         <FloatingShape size={44} color="#f59e0b" initialX={120} initialY={280} delay={1} />
