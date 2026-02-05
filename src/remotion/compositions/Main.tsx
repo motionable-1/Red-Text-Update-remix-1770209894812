@@ -176,7 +176,7 @@ export const Main: React.FC = () => {
       <AbsoluteFill
         style={{
           background:
-            "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)",
+            "linear-gradient(135deg, #0a0f0a 0%, #0f2518 50%, #132a13 100%)",
         }}
       >
         {/* Particle dots - filling entire 1920x1080 frame */}
